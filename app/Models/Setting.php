@@ -1,0 +1,97 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use OwenIt\Auditing\Contracts\Auditable;
+
+class Setting extends Model implements Auditable
+{
+    use \OwenIt\Auditing\Auditable;
+
+    protected $fillable = [
+        'application_name',
+        'application_logo_image',
+        'mobile_logo_image',
+        'dark_application_logo_image',
+        'custom_css_file',
+        'allow_self_registration',
+        'is_new_registered_user_active_by_default',
+        'use_captcha_on_registration',
+        'use_captcha_on_login',
+        'is_session_time_out_enabled',
+        'time_out_second',
+        'show_time_out_notification_second',
+        'is_email_confirmation_required_for_login',
+        'is_cookie_consent_enabled',
+        'use_default_settings',
+        'require_digit',
+        'require_lowercase',
+        'require_non_alphanumeric',
+        'require_uppercase',
+        'required_length',
+        'is_enabled',
+        'max_failed_access_attempts_before_lockout',
+        'default_account_lockout_seconds',
+        'is_enabled',
+        'is_email_provider_enabled',
+        'is_sms_provider_enabled',
+        'is_google_authenticator_enabled',
+        'is_remember_browser_enabled',
+        'default_from_address',
+        'default_from_display_name',
+        'smtp_host',
+        'smtp_port',
+        'smtp_enable_ssl',
+        'smtp_use_default_credentials',
+        'smtp_domain',
+        'smtp_user_name',
+        'smtp_password',
+        'test_email_address_input',
+        'facebook',
+        'twitter',
+        'whatsapp',
+        'instagram',
+        'youtube',
+        'tiktok',
+        'is_quick_theme_select_enabled',
+        'color_scheme',
+        'primary_color',
+        'secondary_color',
+        'shadow_transparency',
+        'primary_button',
+        'secondary_button',
+        'footer_background_color',
+        'font',
+        'header_color',
+        'header_size',
+        'breadcrumb',
+        'is_expired',
+        'meta_tags_head',
+        'meta_tags_body',
+        'meta_tags_footer'
+    ];
+
+    protected $casts = [
+        'allow_self_registration' => 'boolean',
+        'is_new_registered_user_active_by_default' => 'boolean',
+        'use_captcha_on_registration' => 'boolean',
+        'use_captcha_on_login' => 'boolean',
+        'is_session_time_out_enabled' => 'boolean',
+        'is_email_confirmation_required_for_login' => 'boolean',
+        'is_cookie_consent_enabled' => 'boolean',
+        'use_default_settings' => 'boolean',
+        'require_digit' => 'boolean',
+        'require_lowercase' => 'boolean',
+        'require_non_alphanumeric' => 'boolean',
+        'require_uppercase' => 'boolean',
+        'is_email_provider_enabled' => 'boolean',
+        'is_sms_provider_enabled' => 'boolean',
+        'is_google_authenticator_enabled' => 'boolean',
+        'is_remember_browser_enabled' => 'boolean',
+        'smtp_enable_ssl' => 'boolean',
+        'smtp_use_default_credentials' => 'boolean',
+        'is_enabled' => 'boolean',
+        'is_quick_theme_select_enabled' => 'boolean',
+    ];
+}

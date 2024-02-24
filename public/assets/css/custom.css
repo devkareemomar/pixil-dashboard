@@ -1,0 +1,29 @@
+body {
+	font-family: cairo, Jost, sans-serif !important;
+}
+
+.badge {
+	-webkit-border-radius: 4px !important;
+	border-radius: 4px !important;
+}
+
+html[dir="rtl"]
+	.select2-container--default
+	.select2-selection--single
+	.select2-selection__arrow {
+	left: 3% !important;
+	right: auto !important;
+}
+
+html[dir="rtl"] .select2-container {
+	text-align: right !important;
+}
+
+tr{
+    border-bottom-width: 2px;
+}
+
+td {
+    text-align: center;
+    margin: auto;
+}
