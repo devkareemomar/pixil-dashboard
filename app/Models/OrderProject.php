@@ -15,7 +15,7 @@ class OrderProject extends Model
 
 
     protected $fillable = ['order_id', 'project_id', 'qty', 'price', 'tax_amount',
-     'created_at', 'updated_at','name','email','phone','comment'];
+     'created_at', 'updated_at','name','email','phone','comment','is_gift'];
 
     public function order()
     {

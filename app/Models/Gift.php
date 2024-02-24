@@ -16,6 +16,8 @@ class Gift extends BaseModel
         'recipient_name',
         'recipient_email',
         'price',
+        'order_project_id',
+        'template'
     ];
 
     public function user()
@@ -27,4 +29,11 @@ class Gift extends BaseModel
     {
         return $this->belongsTo(Project::class);
     }
+
+    public function order_project()
+    {
+        return $this->belongsTo(OrderProject::class,'order_project_id');
+    }
+
+
 }
