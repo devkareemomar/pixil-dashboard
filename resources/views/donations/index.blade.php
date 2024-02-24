@@ -31,7 +31,9 @@
 							<th>{{ __('Amount') }}</th>
 							<th>{{ __('User')}}</th>
 							<th>{{ __('Donor') }}</th>
+							<th>{{ __('Email') }}</th>
 							<th>{{ __('Phone') }}</th>
+							<th>{{ __('Comment') }}</th>
 							<th>{{ __('Reference') }}</th>
 							<th>{{ __('Payment Method') }}</th>
 						</tr>
@@ -43,8 +45,10 @@
 							<td>{{ $donation->project?->name }}</td>
 							<td>{{ $donation->price }}</td>
 							<td>{{ $donation?->order?->user?->name ?? __('Guest')}}</td>
-							<td>{{ $donation->order?->name }}</td>
-							<td>{{ $donation->order?->phone }}</td>
+							<td>{{ $donation->name }}</td>
+							<td>{{ $donation->email }}</td>
+							<td>{{ $donation->phone }}</td>
+							<td>{{ $donation->comment }}</td>
 							<td>{{ $donation->order?->payment?->metadata['id'] ?? '' }}</td>
 							{{-- <td>{{ array_key_exists('focusTransaction', $donation->order?->payment?->metadata ?? []) ?
 								$donation->order?->payment?->metadata['focusTransaction']['ReferenceId'] : '' }}</td> --}}
