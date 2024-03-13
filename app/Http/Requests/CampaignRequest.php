@@ -18,8 +18,8 @@ class CampaignRequest extends FormRequest
         $id = $this->route('campaign');
         return [
             'campaigns' => ['required', 'array'],
-            'campaigns.*.title' => ['required', 'string', 'min:3', Rule::unique('campaigns')->ignore($id)],
-            'campaigns.*.description' => ['required', 'min:3'],
+            'campaigns.*.title' => ['nullable', 'string', 'min:3', Rule::unique('campaigns')->ignore($id)],
+            'campaigns.*.description' => ['nullable', 'min:3'],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp', 'max:2048'],
             'start_date' => ['nullable', 'date'],
             'end_date' => ['nullable', 'date'],
@@ -34,8 +34,8 @@ class CampaignRequest extends FormRequest
     {
         return [
             'campaigns' => ['required', 'array'],
-            'campaigns.*.title' => ['required', 'string', 'min:3', Rule::unique('campaigns')],
-            'campaigns.*.description' => ['required', 'min:3'],
+            'campaigns.*.title' => ['nullable', 'string', 'min:3', Rule::unique('campaigns')],
+            'campaigns.*.description' => ['nullable', 'min:3'],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,webp', 'max:2048'],
             'start_date' => ['required', 'date'],
             'end_date' => ['required', 'date'],

@@ -189,4 +189,12 @@ class Project extends BaseModel
         });
     }
 
+    /**
+     * The projects that belong to the campaign.
+     */
+    public function campaigns()
+    {
+        return $this->belongsToMany(Campaign::class, 'campaign_projects');
+    }
+
 }

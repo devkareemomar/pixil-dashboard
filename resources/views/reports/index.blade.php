@@ -16,11 +16,12 @@
             </div>
             <div class="card-body">
                 <x-filter :filter_attributes="[
-                    'status' => ['pending' => __('Pending'), 'completed' => __('Completed')],
+                    'status' => ['pending' => __('Pending'), 'completed' => __('Completed'),'failed' => __('Failed')],
                     'project_id' => $projects,
                     'from_date' => 'date',
                     'to_date' => 'date',
                     'user_id' => $users,
+                    'campaign_id' => $campaigns,
                 ]" />
 
                 <div class="row">
@@ -56,6 +57,7 @@
                         </thead>
                         <tbody>
                             @forelse ($reports as $key=>$report)
+
                                 <tr>
                                     <td>{{ $loop->iteration + $reports->links()->paginator->firstItem() - 1 }}</td>
                                     <td>{{ $report->project?->category?->name }}</td>

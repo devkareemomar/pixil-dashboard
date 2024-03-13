@@ -22,7 +22,7 @@ class LanguageRequest extends FormRequest
             'flag' => [
                 'nullable',
                 'image',
-                'dimensions:min_width=32,min_height=32,max_width=64,max_height=64',
+                // 'dimensions:min_width=32,min_height=32,max_width=64,max_height=64',
                 'mimes:png,ico',
             ],
             'is_default' => ['nullable', 'boolean'],
@@ -38,7 +38,7 @@ class LanguageRequest extends FormRequest
             'flag' => [
                 'required',
                 'image',
-                'dimensions:min_width=32,min_height=32,max_width=64,max_height=64',
+                // 'dimensions:min_width=32,min_height=32,max_width=64,max_height=64',
                 'mimes:png,ico',
             ],
             'is_default' => ['nullable', 'boolean'],

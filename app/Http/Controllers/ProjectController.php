@@ -71,6 +71,11 @@ class ProjectController extends Controller
     public function store(ProjectRequest $request)
     {
         $data = $request->validated();
+
+        if(!isset($data['donation_available'])){
+            $data['donation_available'] = 1;
+        }
+
         if ($data['suggested_values'] != null) {
 
             $data['suggested_values'] = implode(',', array_column(json_decode($data['suggested_values']), 'value'));
